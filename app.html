@@ -230,7 +230,7 @@ window.PM_DATA = {"app":"C3-E2_projection-map_v09","built":"2026-10-15 23:54","d
    the PNG-sequence player; v02 water and v01 calibration kept).
    One page, two roles: ?role=projector (black, water only, no text ever) and ?role=control (labels, fields, keys, a live
    preview, exporters). BroadcastChannel 'c3e2-pm'; the control tab also works alone.
-   The projection maps water only (Marko 14 Oct 17:29): surface, level loop, currents, ponding, runoff, flood edge, and
+   The projection maps water only (14 Oct 17:29): surface, level loop, currents, ponding, runoff, flood edge, and
    contours as a check (ADDENDUM-B). Black #000000 everywhere else. Plan view, orthographic, top down.
    Provenance: every ported block carries its ancestor (see 04_docs/C3-E2_kodama-lineage_v01.md). No em dashes. */
 'use strict';
@@ -996,7 +996,7 @@ function viewTip(v) { const r = D.throw.find(x => x.target === (v === 'full' ? '
   if (S.d8) { const r8 = D.throw.find(x => x.target === 'disc8'); return v === 'full' ? 'Disc 8, the whole 203 mm (8 in) disc; projector ' + fmtM(r8.height_m) + ' above the table; the rim circle (o) is the same circle' : 'half ' + (v === 'half-N' ? 'A (NW of the split line)' : 'B (SE of the split line)') + ' of Disc 8'; }
   return v === 'full' ? 'the whole 400 mm disc; ' + h + '; the rim circle (o) is the same circle' : WIN_IN[v] ? 'close-up: ' + h + '; the inner arc is this circle\'s edge, the outer arc is the disc rim; drag with c and t on to move it'
     : 'half ' + (v === 'half-N' ? 'A (NW of the split line)' : 'B (SE of the split line)') + ': ' + h + '; the two halves cover the whole disc in two runs'; }
-const VIEW_LINE = 'Whole disc from 5.4 ft; close-ups from lower; halves for a sharper whole disc in two runs.';   /* Marko, ADDENDUM-H 2 */
+const VIEW_LINE = 'Whole disc from 5.4 ft; close-ups from lower; halves for a sharper whole disc in two runs.';   /* ADDENDUM-H 2 */
 function viewOptions(sel) { sel.innerHTML = VIEWS.map(v => '<option value="' + v + '" title="' + viewTip(v).replace(/"/g, '&quot;') + '">' + viewLabel(v) + '</option>').join(''); }
 function syncFields() {
   $('i-profile').value = profVal(); $('i-view').value = S.view; $('i-view').disabled = S.profile !== 'disc';
@@ -1440,4 +1440,4 @@ window.__pm = { ready: true, role: ROLE, profile: profKey(), canvas: CAN };
 })();
 
 </script>
-<style>.hh-foot{position:fixed;left:0;right:0;bottom:0;margin:0;padding:3px 10px;font:11px/1.35 "Futura PT",Jost,system-ui,sans-serif;color:#8a8f98;background:rgba(0,0,0,.55);pointer-events:none;z-index:2}body.projector .hh-foot{display:none}</style><footer class="hh-foot"><p>All Holo-Hydra are original works by Marko Manriquez. &copy; 2026. All rights reserved.<br>No reproduction, redistribution, screenshots for publication, or use for AI or machine-learning training without written permission.</p></footer></body></html>
+<style>.hh-foot{position:fixed;left:0;right:0;bottom:0;margin:0;padding:3px 10px;font:11px/1.35 "Futura PT",Jost,system-ui,sans-serif;color:#8a8f98;background:rgba(0,0,0,.55);pointer-events:none;z-index:2}body.projector .hh-foot{display:none}</style><footer class="hh-foot"><p>All Holo-Hydra are original works. &copy; 2026. All rights reserved.<br>No reproduction, redistribution, screenshots for publication, or use for AI or machine-learning training without written permission.</p></footer></body></html>
